@@ -1,0 +1,12 @@
+<p><a [routerLink]="['']">Home</a></p>
+<div *ngIf="product; else ProductNotExists">
+  <p>{{ product.name }}</p>
+  <p>{{ product.price }}</p>
+  <p>{{ product.description }}</p>
+  <div>
+    <button type="button" (click)="addToCart(product)">Add to Cart</button>
+  </div>
+</div>
+<ng-template #ProductNotExists>
+  product ({{ productIdFromParam }}) not exists!
+</ng-template>
